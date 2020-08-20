@@ -6,9 +6,9 @@
   "author": "John Eastwood <jjge732@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint *.js",
+    "lint": "./node_modules/.bin/eslint *.js --fix"
   },
-  "pre-commit": ["lint"],
+  "pre-commit": "lint",
   "devDependencies": {
     "eslint": "^7.2.0",
     "eslint-config-airbnb-base": "^14.2.0",
