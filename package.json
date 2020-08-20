@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "build": "npm-run-all clean transpile",
-    "clean": "rimraf dist-server dist-ui",
+    "clean": "rimraf server/dist",
     "dev": "NODE_ENV=development npm-run-all build server",
     "prod": "NODE_ENV=production npm-run-all build server",
-    "server": "node ./dist-server/bin/www",
+    "server": "node ./server/dist/bin/www",
     "start": "npm run prod",
     "test": "jest",
-    "transpile": "babel ./server --out-dir dist-server",
+    "transpile": "babel ./server --out-dir server/dist",
     "watch:dev": "nodemon"
   },
   "babel": {
