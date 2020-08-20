@@ -5,10 +5,8 @@
   "scripts": {
     "build": "npm-run-all clean transpile",
     "clean": "rimraf server/dist",
-    "dev": "NODE_ENV=development npm-run-all build server",
-    "prod": "NODE_ENV=production npm-run-all build server",
     "server": "node ./server/dist/bin/www",
-    "start": "npm run prod",
+    "start": "npm-run-all build server",
     "test": "jest",
     "transpile": "babel ./server --out-dir server/dist",
     "watch:dev": "nodemon"
@@ -22,7 +20,7 @@
     "testEnvironment": "node"
   },
   "nodemonConfig": { 
-    "exec": "npm run dev",
+    "exec": "yarn run start",
     "watch": ["server/*", "ui/*"],
     "ignore": ["**/__tests__/**", "*.test.js", "*.spec.js"]
   },
