@@ -14,7 +14,7 @@ module.exports = {
     }
   }, {
     name: 'server',
-    cwd: '.',
+    cwd: 'server',
     script: 'yarn',
     watch: ['server', 'ui'],
     ignore_watch: ['server/node_modules', 'server/dist'],

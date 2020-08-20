@@ -1,39 +1,20 @@
 {
-  "name": "app",
-  "version": "0.0.0",
-  "private": true,
+  "name": "OneStopNews",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jjge732/OneStopNews.git",
+  "author": "John Eastwood <jjge732@gmail.com>",
+  "license": "MIT",
   "scripts": {
-    "build": "npm-run-all clean transpile",
-    "clean": "rimraf server/dist",
-    "server": "node ./server/dist/bin/www",
-    "start": "npm-run-all build server",
-    "test": "jest",
-    "transpile": "babel ./server --out-dir server/dist",
-    "watch:dev": "nodemon"
+    "lint": "./node_modules/.bin/eslint *.js",
+    "pre-commit": "lint"
   },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
-  },
-  "jest": { 
-    "testEnvironment": "node"
-  },
-  "nodemonConfig": { 
-    "exec": "yarn run start",
-    "watch": ["server/*", "ui/*"],
-    "ignore": ["**/__tests__/**", "*.test.js", "*.spec.js"]
-  },
-  "dependencies": {
-    "@babel/cli": "^7.10.5",
-    "@babel/core": "^7.11.1",
-    "@babel/preset-env": "^7.11.0",
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "morgan": "~1.9.1",
-    "nodemon": "^2.0.4",
-    "npm-run-all": "^4.1.5",
-    "rimraf": "^3.0.2"
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "git-hooks": "^1.1.10",
+    "pre-commit": "^1.2.2"
   }
 }
