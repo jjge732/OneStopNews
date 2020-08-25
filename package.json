@@ -6,7 +6,7 @@
   "author": "John Eastwood <jjge732@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint *.js --fix"
+    "lint": "./node_modules/.bin/eslint **.js --fix"
   },
   "pre-commit": "lint",
   "devDependencies": {

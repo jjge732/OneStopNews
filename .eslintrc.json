@@ -6,7 +6,8 @@
     },
     "extends": [
         "plugin:vue/essential",
-        "airbnb-base"
+        "airbnb-base",
+        "eslint:recommended"
     ],
     "parserOptions": {
         "ecmaVersion": 11,
@@ -16,5 +17,6 @@
         "vue"
     ],
     "rules": {
+        "no-plusplus": 0
     }
 }
