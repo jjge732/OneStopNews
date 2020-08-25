@@ -7,7 +7,7 @@ if (process.env.NODE_ENV === 'dev') {
 }
 /* eslint-enable */
 
-export default class Controller {
+export default class Model {
   constructor() {
     this.NYT = new NYT();
   }

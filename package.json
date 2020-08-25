@@ -13,8 +13,12 @@
     "eslint": "^7.2.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsdoc": "^30.2.4",
     "eslint-plugin-vue": "^6.2.2",
     "git-hooks": "^1.1.10",
     "pre-commit": "^1.2.2"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-private-methods": "^7.10.4"
   }
 }

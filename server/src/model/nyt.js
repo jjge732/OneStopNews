@@ -7,7 +7,7 @@ export default class NYT {
     this.possibleSections = new Set(['arts', 'automobiles', 'books', 'business', 'fashion', 'food', 'health', 'home', 'insider', 'magazine', 'movies', 'nyregion', 'obituaries', 'opinion', 'politics', 'realestate', 'science', 'sports', 'sundayreview', 'technology', 'theater', 't-magazine', 'travel', 'upshot', 'us', 'world']);
   }
 
-  async getArticleMetaData(section = 'home', quantity = 1) {
+  async getArticlesMetaData(section = 'home', quantity = 1) {
     if (this.possibleSections.has(section)) {
       const response = await axios.get(`https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=${process.env.NYT_API_KEY}`);
       if (quantity > 0) {

@@ -4,20 +4,22 @@
         "es2020": true,
         "node": true
     },
-    "extends": [
-        "plugin:vue/essential",
-        "airbnb-base",
-        "eslint:recommended"
-    ],
     "parserOptions": {
         "ecmaVersion": 11,
         "sourceType": "module"
     },
     "plugins": [
+        "jsdoc",
         "vue"
     ],
     "rules": {
         "no-plusplus": 0,
         "no-restricted-globals": 1
-    }
+    },
+    "extends": [
+        "airbnb-base",
+        "eslint:recommended",
+        "plugin:jsdoc/recommended",
+        "plugin:vue/essential"
+    ]
 }
