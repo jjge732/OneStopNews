@@ -26,7 +26,7 @@ export default {
 }
 </script>
 
-<style >
+<style>
 #navBar {
   grid-row: 1;
   display: grid;

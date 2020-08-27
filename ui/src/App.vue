@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavBar v-bind:sections='sections' v-on:update:activeSection='getSection'/>
-    <Container v-bind:articles='articles'/>
+    <Container v-bind:articles='articles' v-bind:isLoading='isLoading'/>
   </div>
 </template>
 
@@ -19,7 +19,8 @@ export default {
         {name: 'news'},
         {name: 'politics'}
       ],
-      articles: undefined
+      articles: null,
+      isLoading: true
     }
   },
   created: function() {
@@ -29,8 +30,9 @@ export default {
     getSection(activeSection) {
       API.getArticlesMetaData(activeSection)
         .then(response => {
-          this.articles = response.data
-          this.$set(this.articles, response.data)
+          this.articles = response.data;
+          this.isLoading = false;
+          this.articles.$set(this.articles, response.data)
         })
         .catch(err => console.log(err));
     }

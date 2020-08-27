@@ -15,7 +15,7 @@ export default class NYT {
         const { results } = response.data;
         for (let i = 0; i < quantity; i++) {
           const { title, short_url: shortUrl, multimedia } = results[i];
-          articles[i] = new Article(title, shortUrl, multimedia[2].url);
+          articles[i] = new Article(title, shortUrl, multimedia[0].url);
         }
         return articles;
       }

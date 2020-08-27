@@ -1,5 +1,5 @@
 <template>
-  <a class='articleCard' :href='article.articleUrl' >
+  <a class='articleCard' :href='article.articleUrl'>
     <h2 >{{ article.title.length > 50 ? this.formatTitle(article.title) : article.title}}</h2>
     <img :src='article.imageUrl' />
   </a>
@@ -7,9 +7,9 @@
 
 <script>
 export default {
-  name: 'Article',
+  name: 'ArticleCard',
   props: {
-    article: Object,
+    article: Object
   },
   methods: {
     formatTitle(title) {
@@ -27,14 +27,15 @@ export default {
 .articleCard {
   display: grid;
   color: inherit;
+  box-sizing: border-box;
   text-decoration: none;
-  margin: 10px .8vw;
-  width: 30vw;
+  margin: 10px 1.125vw;
+  width: 20vw;
   justify-items: center;
   text-align: center;
-  border: .1vw solid #555;
-  height: auto;
-  box-shadow: 0.2em 0.25em 0.15em #333, -0.02em 0.25em 0.15em #333;
+  height: 31vh;
+  overflow: hidden;
+  box-shadow: 0.2em 0.25em 0.15em #333, -0.02em 0.25em 0.15em #333, -0.02em -0.02em 0.15em #333, 0.2em -0.02em 0.15em #333;
 }
 .articleCard h2 {
   display: flex;
