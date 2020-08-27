@@ -1,6 +1,6 @@
 <template>
   <a class='articleCard' :href='article.articleUrl' >
-    <h2 >{{ article.title.length > 60 ? `${article.title.replace(/^(.{60}[^\s]*).*/, "$1")}...` : article.title}}</h2>
+    <h2 >{{ article.title.length > 50 ? this.formatTitle(article.title) : article.title}}</h2>
     <img :src='article.imageUrl' />
   </a>
 </template>
@@ -10,6 +10,15 @@ export default {
   name: 'Article',
   props: {
     article: Object,
+  },
+  methods: {
+    formatTitle(title) {
+      let titleContent = title.replace(/^(.{50}[^\s]*).*/, "$1").trim();
+      if (/\W/.test(titleContent.charAt(titleContent.length - 1))) {
+        titleContent = `${titleContent.substring(0, titleContent.length - 1)}`;
+      }
+      return `${titleContent}...`;
+    }
   }
 }
 </script>

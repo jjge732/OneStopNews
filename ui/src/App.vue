@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     getSection(activeSection) {
-      API.getArticlesMetaData(activeSection, 10)
+      API.getArticlesMetaData(activeSection)
         .then(response => {
           this.articles = response.data
           this.$set(this.articles, response.data)

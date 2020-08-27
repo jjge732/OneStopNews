@@ -37,7 +37,7 @@ export default {
   grid-column: 1 / 4;
   grid-row: 1;
   font-weight: 700;
-  text-shadow: 0.1em 0.05em 0.15em #888;
+  text-shadow: 0.1em 0.05em 0.15em #888, -0.01em 0.15em 0.15em #888;
   font-size: 5em;
   margin-top: 10px;
   padding-bottom: 10px;

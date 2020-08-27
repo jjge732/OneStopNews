@@ -28,7 +28,7 @@ export default {
   cursor: pointer;
 }
 .sectionHeading h1 {
-  text-shadow: .1em .05em .15em #888;
+  text-shadow: .1em .05em .15em #888, -0.01em 0.15em 0.15em #888;
   padding-bottom: .1em;
   text-transform: capitalize;
 }
