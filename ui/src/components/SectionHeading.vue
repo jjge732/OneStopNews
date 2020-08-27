@@ -1,26 +1,26 @@
 <template>
-  <div class='page' v-bind:id='{pageName}'>
-      {{ pageName }}
+  <div class='sectionHeading' v-bind:id='sectionName'>
+      {{ sectionName }}
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Page',
+  name: 'Section',
   props: {
-    pageName: String,
+    sectionName: String,
     isActive: Boolean
   }
 }
 </script>
 
 <style scoped>
-.page {
+.sectionHeading {
   grid-row: 2;
   grid-column: span 1;
   font-size: 2em;
 }
-.page:hover {
+.sectionHeading:hover {
   cursor: pointer;
 }
 </style>

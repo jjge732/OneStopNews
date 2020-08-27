@@ -10,7 +10,7 @@ const router = express.Router();
 *
 */
 router.get('/', (req, res) => {
-  res.status(200).render('index', { title: 'Express' });
+  res.status(200).render('index');
 });
 
 router.use('/api/v1', api);

@@ -1,36 +1,34 @@
 <template>
   <div id="navBar">
-    <a v-on:click="goToPage('home')"  id=title >
+    <a v-on:click="changeSection('home')" id=title >
       One Stop News
     </a>
-    <Page v-bind:isActive=false pageName=Sports v-on:click="goToPage('sports')"/>
-    <Page v-bind:isActive=false pageName=Politics v-on:click="goToPage('politics')"/>
+    <SectionHeading v-for='section in sections' :key='section.name' v-bind:sectionName='section.name' v-on:click='changeSection(section.name)' />
   </div>
 </template>
 
 <script>
-import Page from './Page';
+import SectionHeading from './SectionHeading';
 
 export default {
   name: 'NavBar',
   props: {
-    msg: String
+    sections: Array
   },
   components: {
-    Page
+    SectionHeading
   },
   methods: {
-    goToPage: function (pageName) {
-      alert(`Going to page ${pageName}`)
+    changeSection: function (sectionName) {
+      this.$emit('update:activeSection', sectionName);
     }
   }
 }
 </script>
 
-<style scoped>
+<style >
 #navBar {
   display: grid;
-  grid-auto-columns: 1fr;
   justify-content: space-evenly;
   text-align: center;
   position: fixed;
@@ -38,7 +36,7 @@ export default {
   width: 100vw;
 }
 #title {
-  grid-column: 1 / 3;
+  grid-column: 1 / 4;
   grid-row: 1;
   font-weight: 700;
   font-size: 5em;
