@@ -6,7 +6,7 @@
   "author": "John Eastwood <jjge732@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "pm2 start --env prod",
+    "start": "pm2 start --env production",
     "init": "yarn install && cd server && yarn install && cd ../ui && yarn install",
     "lint": "./node_modules/.bin/eslint **.js --fix"
   },

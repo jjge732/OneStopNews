@@ -19,7 +19,10 @@ export default {
 </script>
 
 <style scoped>
-#contaienr {
-  grid-row: 3;
+#container {
+  grid-row: 2;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2em 1em;
 }
 </style>

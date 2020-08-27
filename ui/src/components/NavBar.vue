@@ -1,8 +1,8 @@
 <template>
   <div id="navBar">
-    <a v-on:click="changeSection('home')" id=title >
-      One Stop News
-    </a>
+    <div id=title >
+      <a v-on:click="changeSection('home')">One Stop News</a>
+    </div>
     <SectionHeading v-for='section in sections' :key='section.name' v-bind:sectionName='section.name' v-on:click='changeSection(section.name)' />
   </div>
 </template>
@@ -28,22 +28,21 @@ export default {
 
 <style >
 #navBar {
+  grid-row: 1;
   display: grid;
-  justify-content: space-evenly;
   text-align: center;
-  position: fixed;
-  height: 8vh;
   width: 100vw;
 }
 #title {
   grid-column: 1 / 4;
   grid-row: 1;
   font-weight: 700;
+  text-shadow: 0.1em 0.05em 0.15em #888;
   font-size: 5em;
   margin-top: 10px;
-  margin-bottom: 20px;
+  padding-bottom: 10px;
 }
-#title:hover {
+#title a:hover {
   cursor: pointer;
 }
 </style>

@@ -15,9 +15,9 @@ export default {
   data() {
     return {
       sections: [
-        {name: 'Sports'}, 
-        {name: 'News'},
-        {name: 'Politics'}
+        {name: 'sports'}, 
+        {name: 'news'},
+        {name: 'politics'}
       ],
       articles: undefined
     }
@@ -45,6 +45,8 @@ export default {
 <style>
 #app {
   color: #555;
-  display: flex;
+  display: grid;
+  box-sizing: border-box;
+  background-color: #ddd;
 }
 </style>
