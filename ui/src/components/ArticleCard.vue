@@ -1,7 +1,8 @@
 <template>
   <a class='articleCard' :href='article.articleUrl'>
     <h2 >{{ article.title.length > 50 ? this.formatTitle(article.title) : article.title}}</h2>
-    <img :src='article.imageUrl' />
+    <img v-if='article.imageUrl' :src='article.imageUrl' />
+    <img v-else src='../assets/nytLogo.jpeg'/>
   </a>
 </template>
 
@@ -33,12 +34,13 @@ export default {
   width: 20vw;
   justify-items: center;
   text-align: center;
-  height: 31vh;
+  height: 37.5vh;
   overflow: hidden;
   box-shadow: 0.2em 0.25em 0.15em #333, -0.02em 0.25em 0.15em #333, -0.02em -0.02em 0.15em #333, 0.2em -0.02em 0.15em #333;
 }
 .articleCard h2 {
   display: flex;
+  justify-content: center;
   align-items: center;
   grid-row: 1;
   height: 3em;
@@ -50,6 +52,7 @@ export default {
 .articleCard img {
   grid-row: 2;
   width: 100%;
+  height: 35vh;
 }
 .articleCard:hover {
   cursor: pointer;

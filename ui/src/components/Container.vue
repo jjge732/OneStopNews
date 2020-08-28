@@ -1,6 +1,6 @@
 <template>
   <div id='container' >
-    <img id='dummyContent' v-if='isLoading' src='../assets/lazy-loader.gif'/>
+    <img id='dummyContent' v-if='articles === null' src='../assets/lazy-loader.gif'/>
     <ArticleCard v-else v-for='article in loadedArticles' :key='article.title' v-bind:article='article' v-bind:isLoading='isLoading'/>
   </div>
 </template>
@@ -17,7 +17,8 @@ export default {
   data() { 
     return {
       loadedArticles: null,
-      toLoadArticles: null
+      storedArticles: null,
+      scrolledToBottom: false
     }
   },
   components: {
@@ -28,11 +29,9 @@ export default {
   },
   methods: {
     loadArticles() {
-      if (this.articles === null) {
-        this.loadedArticles = this.loadedArticles = null;
-      } else {
-        this.loadedArticles = this.articles.slice(0, 8);
-        this.toLoadArticles = this.articles.slice(8, this.articles.length);
+      if (this.articles !== null) {
+        this.loadedArticles = this.articles.splice(0, 24);
+        this.storedArticles = this.articles.splice(0, this.articles.length);
       }
     }
   }

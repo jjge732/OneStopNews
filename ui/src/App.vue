@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavBar v-bind:sections='sections' v-on:update:activeSection='getSection'/>
-    <Container v-bind:articles='articles' v-bind:isLoading='isLoading'/>
+    <Container v-bind:articles='articles'/>
   </div>
 </template>
 
@@ -15,9 +15,12 @@ export default {
   data() {
     return {
       sections: [
-        {name: 'sports'}, 
-        {name: 'news'},
-        {name: 'politics'}
+        {name: 'books'}, 
+        {name: 'business'},
+        {name: 'fashion'},
+        {name: 'politics'},
+        {name: 'science'},
+        {name: 'technology'}
       ],
       articles: null,
       isLoading: true
@@ -28,11 +31,10 @@ export default {
   },
   methods: {
     getSection(activeSection) {
+      this.articles = null;
       API.getArticlesMetaData(activeSection)
         .then(response => {
-          this.articles = response.data;
-          this.isLoading = false;
-          this.articles.$set(this.articles, response.data)
+          this.articles = new Array(...response.data);
         })
         .catch(err => console.log(err));
     }

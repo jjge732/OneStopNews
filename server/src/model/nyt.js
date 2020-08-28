@@ -11,11 +11,12 @@ export default class NYT {
     if (this.possibleSections.has(section)) {
       const response = await axios.get(`https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=${process.env.NYT_API_KEY}`);
       if (quantity > 0) {
-        const articles = [quantity];
         const { results } = response.data;
-        for (let i = 0; i < quantity; i++) {
+        const articles = new Array(Math.min(quantity, results.length));
+        for (let i = 0; i < articles.length; i++) {
           const { title, short_url: shortUrl, multimedia } = results[i];
-          articles[i] = new Article(title, shortUrl, multimedia[0].url);
+          const imageUrl = multimedia === null ? null : multimedia[0].url;
+          articles[i] = new Article(title, shortUrl, imageUrl);
         }
         return articles;
       }
