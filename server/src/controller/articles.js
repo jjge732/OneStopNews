@@ -5,7 +5,8 @@ const model = new Model();
 export default class Articles {
   async getArticlesMetaData(req, res, next) {
     const sourceMap = new Map([
-      ['nyt', model.NYT],
+      ['guardian', model.Guardian],
+      ['nyt', model.NYT]
     ]);
     const { section, source } = req.query;
     let quantity = req.query.quantity || 1;
@@ -22,9 +23,23 @@ export default class Articles {
         sources: [...sourceMap.keys()],
       });
     } else {
-      await model.NYT.getArticlesMetaData(section, quantity)
-        .then(response => res.status(200).json(response))
-        .catch(err => res.status(400).json(err));
+      let promiseList = new Array();
+      let responseList = new Array(quantity);
+      let error = null;
+      for (let source of sourceMap.values()) {
+        promiseList.push(await source.getArticlesMetaData(section, quantity).catch(err => error = err));
+      }
+      for (let i = 0; i < responseList.length; i++) {
+        responseList[i] = promiseList[Math.floor(Math.random() * sourceMap.size)][i];
+      }
+      if (responseList.length === 0) {
+        res.status(400).json(error);
+        next();
+        return;
+      } else if (error == null) {
+        console.log(error);
+      }
+      res.status(200).json(responseList);
     }
     next();
   }

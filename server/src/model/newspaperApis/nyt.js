@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import Article from './article';
+import Article from '../article';
 
 export default class NYT {
   constructor() {

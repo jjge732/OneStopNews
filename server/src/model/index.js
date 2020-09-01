@@ -1,4 +1,5 @@
-import NYT from './nyt';
+import Guardian from './newspaperApis/guardian';
+import NYT from './newspaperApis/nyt';
 
 /* eslint-disable */
 if (process.env.NODE_ENV === 'dev') {
@@ -9,6 +10,7 @@ if (process.env.NODE_ENV === 'dev') {
 
 export default class Model {
   constructor() {
+    this.Guardian = new Guardian();
     this.NYT = new NYT();
   }
 }
