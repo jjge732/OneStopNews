@@ -2,7 +2,8 @@
   <a class='articleCard' :href='article.articleUrl'>
     <h2 >{{ article.title.length > 50 ? this.formatTitle(article.title) : article.title}}</h2>
     <img v-if='article.imageUrl' :src='article.imageUrl' />
-    <img v-else src='../assets/nytLogo.jpeg'/>
+    <img v-else-if='article.source === "nyt"' src='../assets/nytLogo.jpeg'/>
+    <img v-else src='../assets/generic_background.jpg'/>
   </a>
 </template>
 

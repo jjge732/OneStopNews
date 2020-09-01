@@ -20,7 +20,7 @@ export default class Guardian {
         const articles = new Array(Math.min(quantity, results.length));
         for (let i = 0; i < articles.length; i++) {
           const { webTitle: title, webUrl } = results[i];
-          articles[i] = new Article(title, webUrl);
+          articles[i] = new Article(title, webUrl, 'guardian');
         }
         return articles;
       }

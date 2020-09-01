@@ -16,7 +16,7 @@ export default class NYT {
         for (let i = 0; i < articles.length; i++) {
           const { title, short_url: shortUrl, multimedia } = results[i];
           const imageUrl = multimedia === null ? null : multimedia[0].url;
-          articles[i] = new Article(title, shortUrl, imageUrl);
+          articles[i] = new Article(title, shortUrl, 'nyt', imageUrl);
         }
         return articles;
       }
