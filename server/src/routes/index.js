@@ -6,7 +6,6 @@ const router = express.Router();
 
 /*
 * GET home page.
-* @param
 *
 */
 router.get('/', (req, res) => {

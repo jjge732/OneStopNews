@@ -3,6 +3,7 @@
     <h2 >{{ article.title.length > 45 ? this.formatTitle(article.title) : article.title}}</h2>
     <img v-if='article.imageUrl' :src='article.imageUrl' />
     <img v-else-if='article.source === "nyt"' src='../assets/nytLogo.jpeg'/>
+    <img v-else-if='article.source === "guardian"' src='../assets/the-guardian-2.svg' />
     <img v-else src='../assets/generic_background.jpg'/>
   </a>
 </template>
