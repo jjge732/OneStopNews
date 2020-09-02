@@ -44,13 +44,13 @@ export default {
   width: 90%;
   margin-left: 5%;
   margin-right: 5%;
-  height: 70vh;
+  height: 78vh;
 }
 #container {
   grid-row: 2;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 2em 0;
+  margin: 1em 0;
 }
 </style>

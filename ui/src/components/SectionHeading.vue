@@ -21,15 +21,13 @@ export default {
   font-size: 2em;
   border-top: 2px solid #555;
   border-bottom: 2px solid #555;
-  border-left: .5px solid #555;
-  border-right: .5px solid #555;
 }
 .sectionHeading:hover {
   cursor: pointer;
 }
 .sectionHeading h1 {
   text-shadow: .1em .05em .15em #888, -0.01em 0.15em 0.15em #888;
-  padding-bottom: .1em;
+  padding-bottom: .05em;
   text-transform: capitalize;
 }
 </style>

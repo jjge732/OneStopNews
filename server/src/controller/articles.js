@@ -12,6 +12,30 @@ function shuffleArr(arr) {
   return arr;
 }
 
+async function getArticlesFromMultipleSources(res, sourceMap, section, quantity) {
+  let promiseArr = new Array();
+  let resultCount = 0;
+  let error = null;
+  let responseArr;
+  for (let source of sourceMap.values()) {
+    const resultsArr = await source.getArticlesMetaData(section, quantity);
+    promiseArr.push(resultsArr);
+    resultCount += resultsArr.length;
+  }
+  promiseArr = shuffleArr(promiseArr.flat());
+  responseArr = new Array(Math.min(parseInt(quantity, 10), resultCount));
+  for (let i = 0; i < responseArr.length; i++) {
+    responseArr[i] = promiseArr[i];
+  }
+  if (responseArr.length === 0) {
+    res.status(400).json(error);
+    next();
+  } else if (error != null) {
+    console.log(error);
+  }
+  res.status(200).json(responseArr);
+}
+
 export default class Articles {
   async getArticlesMetaData(req, res, next) {
     const sourceMap = new Map([
@@ -33,25 +57,7 @@ export default class Articles {
         sources: [...sourceMap.keys()],
       });
     } else {
-      quantity = parseInt(quantity, 10);
-      let promiseArr = new Array();
-      let responseList = new Array(quantity);
-      let error = null;
-      for (let source of sourceMap.values()) {
-        promiseArr.push(await source.getArticlesMetaData(section, quantity));
-      }
-      promiseArr = shuffleArr(promiseArr.flat());
-      for (let i = 0; i < responseList.length; i++) {
-        responseList[i] = promiseArr[i];
-      }
-      if (responseList.length === 0) {
-        res.status(400).json(error);
-        next();
-        return;
-      } else if (error != null) {
-        console.log(error);
-      }
-      res.status(200).json(responseList);
+      await getArticlesFromMultipleSources(res, sourceMap, section, quantity)
     }
     next();
   }

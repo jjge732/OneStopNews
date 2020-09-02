@@ -1,6 +1,6 @@
 <template>
   <a class='articleCard' :href='article.articleUrl'>
-    <h2 >{{ article.title.length > 50 ? this.formatTitle(article.title) : article.title}}</h2>
+    <h2 >{{ article.title.length > 45 ? this.formatTitle(article.title) : article.title}}</h2>
     <img v-if='article.imageUrl' :src='article.imageUrl' />
     <img v-else-if='article.source === "nyt"' src='../assets/nytLogo.jpeg'/>
     <img v-else src='../assets/generic_background.jpg'/>
@@ -15,7 +15,7 @@ export default {
   },
   methods: {
     formatTitle(title) {
-      let titleContent = title.replace(/^(.{50}[^\s]*).*/, "$1").trim();
+      let titleContent = title.replace(/^(.{45}[^\s]*).*/, "$1").trim();
       if (/\W/.test(titleContent.charAt(titleContent.length - 1))) {
         titleContent = `${titleContent.substring(0, titleContent.length - 1)}`;
       }
@@ -35,7 +35,7 @@ export default {
   width: 20vw;
   justify-items: center;
   text-align: center;
-  height: 37.5vh;
+  height: 37vh;
   overflow: hidden;
   box-shadow: 0.2em 0.25em 0.15em #333, -0.02em 0.25em 0.15em #333, -0.02em -0.02em 0.15em #333, 0.2em -0.02em 0.15em #333;
 }
