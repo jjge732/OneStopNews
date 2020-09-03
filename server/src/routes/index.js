@@ -1,16 +1,22 @@
+/** Express router for root route
+ * @module router
+ * @requires express
+ */
+
+/**
+ * express module
+ * @const
+ */
 import express from 'express';
 
 import api from './api';
 
+/**
+ * Express router to mount all functions
+ * @type {object}
+ * @constant
+ */
 const router = express.Router();
-
-/*
-* GET home page.
-*
-*/
-router.get('/', (req, res) => {
-  res.status(200).render('index');
-});
 
 router.use('/api/v1', api);
 

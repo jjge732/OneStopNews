@@ -1,7 +1,7 @@
 <template>
   <div id='container' >
     <img id='dummyContent' v-if='articles === null' src='../assets/lazy-loader.gif'/>
-    <ArticleCard v-else v-for='article in loadedArticles' :key='article.title' v-bind:article='article' v-bind:isLoading='isLoading'/>
+    <ArticleCard v-else v-for='article in articles' :key='article.title' v-bind:article='article' v-bind:isLoading='isLoading'/>
   </div>
 </template>
 
@@ -23,17 +23,6 @@ export default {
   },
   components: {
     ArticleCard
-  },
-  beforeUpdate: function() {
-    this.loadArticles();
-  },
-  methods: {
-    loadArticles() {
-      if (this.articles !== null) {
-        this.loadedArticles = this.articles.splice(0, 24);
-        this.storedArticles = this.articles.splice(0, this.articles.length);
-      }
-    }
   }
 }
 </script>
