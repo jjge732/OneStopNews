@@ -6,6 +6,7 @@
     "build": "npm-run-all clean transpile",
     "clean": "rimraf ./dist",
     "dev": "nodemon --exec yarn babel-node ./src/bin/www.js",
+    "lint": "../node_modules/.bin/eslint src/**/*.js --fix",
     "server": "node ./dist/bin/www",
     "start": "npm-run-all build server",
     "test": "jest",

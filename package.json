@@ -9,7 +9,7 @@
     "dev": "export PORT=5000 & export NODE_ENV=dev && concurrently \"cd ui && yarn serve\" \"cd server && yarn dev\"",
     "start": "pm2 start",
     "init": "yarn install && cd server && yarn install && cd ../ui && yarn install",
-    "lint": "./node_modules/.bin/eslint **.js --fix"
+    "lint": "cd server && yarn lint && cd ../ui && yarn lint"
   },
   "pre-commit": "lint",
   "devDependencies": {

@@ -4,7 +4,7 @@ export default class Controller {
   constructor() {
     const articles = new Articles();
     this.articles = {
-      getArticlesMetaData: articles.getArticlesMetaData,
+      getArticlesMetaData: Articles.getArticlesMetaData.bind(articles),
     };
   }
 }

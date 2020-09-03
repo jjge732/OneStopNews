@@ -1,11 +1,13 @@
 /** Express router for root route
+ *
  * @module router
  * @requires express
  */
 
 /**
  * express module
- * @const
+ *
+ * @constant
  */
 import express from 'express';
 
@@ -13,6 +15,7 @@ import api from './api';
 
 /**
  * Express router to mount all functions
+ *
  * @type {object}
  * @constant
  */

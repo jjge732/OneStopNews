@@ -10,9 +10,9 @@ export default class Guardian {
   async getArticlesMetaData(section = 'home', quantity = 1) {
     if (this.possibleSections.has(section)) {
       if (section != 'home') {
-          section = `&q=${section}`
+        section = `&q=${section}`;
       } else {
-          section = '';
+        section = '';
       }
       const response = await axios.get(`http://content.guardianapis.com/search?api-key=${process.env.GUARDIAN_API_KEY}&order-by=newest${section}`);
       if (quantity > 0) {

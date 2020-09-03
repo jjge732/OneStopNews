@@ -10,7 +10,7 @@ if (process.env.NODE_ENV === 'dev') {
 
 export default class Model {
   constructor() {
-    this.Guardian = new Guardian();
-    this.NYT = new NYT();
+    this.guardian = new Guardian();
+    this.nyt = new NYT();
   }
 }
