@@ -3,7 +3,6 @@
     <h2 >{{ article.title.length > 45 ? this.formatTitle(article.title) : article.title}}</h2>
     <img v-if='article.imageUrl' :src='article.imageUrl' />
     <img v-else-if='article.source === "nyt"' src='../assets/nytLogo.jpeg'/>
-    <img v-else-if='article.source === "guardian"' src='../assets/the-guardian-2.svg' />
     <img v-else src='../assets/generic_background.jpg'/>
   </a>
 </template>
@@ -38,7 +37,8 @@ export default {
   text-align: center;
   height: 37vh;
   overflow: hidden;
-  box-shadow: 0.2em 0.25em 0.15em #333, -0.02em 0.25em 0.15em #333, -0.02em -0.02em 0.15em #333, 0.2em -0.02em 0.15em #333;
+  box-shadow: 0 5px 30px #333;
+  border-radius: 10px;
 }
 .articleCard h2 {
   display: flex;
@@ -47,14 +47,14 @@ export default {
   grid-row: 1;
   height: 3em;
   font-size: 1.5em;
-  border-bottom: .1vw solid #555;
+  /* border-bottom: .1vw solid #555; */
   width: 100%;
   background-color: #bbb;
 }
 .articleCard img {
   grid-row: 2;
   width: 100%;
-  height: 35vh;
+  height: 25vh;
 }
 .articleCard:hover {
   cursor: pointer;
