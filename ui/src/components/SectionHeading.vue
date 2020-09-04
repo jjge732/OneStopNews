@@ -30,4 +30,14 @@ export default {
   padding-bottom: .05em;
   text-transform: capitalize;
 }
+@media only screen and (max-width: 800px) {
+  .sectionHeading {
+    font-size: 1.25em;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .sectionHeading {
+    font-size: 1em;
+  }
+}
 </style>

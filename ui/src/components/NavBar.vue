@@ -46,4 +46,9 @@ export default {
 #title a:hover {
   cursor: pointer;
 }
+@media only screen and (max-width: 800px) {
+  #title {
+    font-size: 2em;
+  }
+}
 </style>

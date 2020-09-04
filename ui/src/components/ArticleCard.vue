@@ -61,4 +61,20 @@ export default {
 .articleCard:hover {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 800px) {
+  .articleCard h2 {
+    font-size: 1em;
+  }
+  .articleCard {
+    margin: 10px 1.125vw;
+    width: 40vw;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .articleCard {
+    margin: 5px 1.125vw;
+    width: 60vw;
+  }
+}
 </style>
