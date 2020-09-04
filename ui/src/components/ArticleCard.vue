@@ -47,6 +47,8 @@ export default {
   height: 3em;
   font-size: 1.5em;
   box-shadow: 0 5px 30px #ddd;
+  padding: 2.5px 10px;
+  margin-bottom: 5px;
   width: 100%;
   background-color: rgba(300, 300, 300, 0.8);
 }
