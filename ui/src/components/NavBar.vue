@@ -32,12 +32,13 @@ export default {
   display: grid;
   text-align: center;
   width: 100vw;
+  color: #fcfcfc;
 }
 #title {
   grid-column: 1 / 7;
   grid-row: 1;
   font-weight: 700;
-  text-shadow: 0.1em 0.05em 0.15em #888, -0.01em 0.15em 0.15em #888;
+  text-shadow: 0 .025em .15em #888, 0 0.10em 0.15em #888;
   font-size: 3em;
   margin-top: 10px;
   padding-bottom: 15px;

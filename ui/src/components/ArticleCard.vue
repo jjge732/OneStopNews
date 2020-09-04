@@ -37,7 +37,6 @@ export default {
   text-align: center;
   height: 37vh;
   overflow: hidden;
-  box-shadow: 0 5px 30px #333;
   border-radius: 10px;
 }
 .articleCard h2 {
@@ -47,14 +46,15 @@ export default {
   grid-row: 1;
   height: 3em;
   font-size: 1.5em;
-  /* border-bottom: .1vw solid #555; */
+  box-shadow: 0 5px 30px #ddd;
   width: 100%;
-  background-color: #bbb;
+  background-color: rgba(300, 300, 300, 0.8);
 }
 .articleCard img {
   grid-row: 2;
   width: 100%;
   height: 25vh;
+  border-radius: 0 0 10px 10px;
 }
 .articleCard:hover {
   cursor: pointer;

@@ -19,8 +19,8 @@ export default {
   grid-row: 2;
   grid-column: span 1;
   font-size: 2em;
-  border-top: 2px solid #555;
-  border-bottom: 2px solid #555;
+  border-top: 2px solid rgba(360, 360, 360, .7);
+  border-bottom: 2px solid rgba(360, 360, 360, .7);
 }
 .sectionHeading:hover {
   cursor: pointer;
