@@ -1059,6 +1059,14 @@ atob@^2.1.2:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
+aws-serverless-express@^3.3.8:
+  version "3.3.8"
+  resolved "https://registry.yarnpkg.com/aws-serverless-express/-/aws-serverless-express-3.3.8.tgz#8c05e0ce3651fc277725c6d2e1b8f8a36dbe4f4b"
+  integrity sha512-2TQdF5EhxnAtGeEi+wSi2M3xCfpiemuImnpU7HKih3onH0izJ/G2tkM+gwcGHZEsW/gLWFl/JjQAYGa3fILfvw==
+  dependencies:
+    binary-case "^1.0.0"
+    type-is "^1.6.16"
+
 axios@^0.20.0:
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.20.0.tgz#057ba30f04884694993a8cd07fa394cff11c50bd"
@@ -1097,6 +1105,11 @@ basic-auth@~2.0.0:
   integrity sha512-NF+epuEdnUYVlGuhaxbbq+dvJttwLnGY+YixlXlME5KpQ5W3CnXA5cVTneY3SPbPDRkcjMbifrwmFYcClgOZeg==
   dependencies:
     safe-buffer "5.1.2"
+
+binary-case@^1.0.0:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/binary-case/-/binary-case-1.1.4.tgz#d687104d59e38f2b9e658d3a58936963c59ab931"
+  integrity sha512-9Kq8m6NZTAgy05Ryuh7U3Qc4/ujLQU1AZ5vMw4cr3igTdi5itZC6kCNrRr2X8NzPiDn2oUIFTfa71DKMnue/Zg==
 
 binary-extensions@^1.0.0:
   version "1.13.1"
@@ -3443,7 +3456,7 @@ type-fest@^0.8.1:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
 
-type-is@~1.6.16:
+type-is@^1.6.16, type-is@~1.6.16:
   version "1.6.18"
   resolved "https://registry.yarnpkg.com/type-is/-/type-is-1.6.18.tgz#4e552cd05df09467dcbc4ef739de89f2cf37c131"
   integrity sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==

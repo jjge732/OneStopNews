@@ -9,9 +9,6 @@ module.exports = {
       PORT: 3000,
       NODE_ENV: 'dev',
     },
-    env_prod: {
-      NODE_ENV: 'prod',
-    },
   }, {
     name: 'server',
     cwd: 'server',
@@ -25,7 +22,7 @@ module.exports = {
     },
     env_prod: {
       PORT: 5000,
-      NODE_ENV: 'prod',
+      NODE_ENV: 'production',
     },
   }],
 };
