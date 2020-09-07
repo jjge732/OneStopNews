@@ -8,8 +8,8 @@ export default class ServerConfig {
    */
 
   /**
-   * @param error
-   * @param port
+   * @param {object} error - The error from the HTTP request
+   * @param {number} port - the port on which the app is available
    */
   static onError(error, port) {
     if (error.syscall !== 'listen') {
@@ -40,7 +40,7 @@ export default class ServerConfig {
    */
 
   /**
-   * @param server
+   * @param {object} server - The server object that holds running application information
    */
   static onListening(server) {
     const addr = server.address();

@@ -3,7 +3,10 @@ import Model from '../model';
 const model = new Model();
 
 /**
- * @param arr
+ * Shuffles the contents of an array.
+ *
+ * @param {Array} arr - The array whose contents will be shuffled
+ * @returns {Array} - A shuffled array
  */
 function shuffleArr(arr) {
   const newArr = new Array(arr.length);
@@ -16,11 +19,12 @@ function shuffleArr(arr) {
 }
 
 /**
- * @param res
- * @param sourceMap
- * @param sources
- * @param section
- * @param quantity
+ * Retrieves articles from all available sources
+ *
+ * @param {object} res - The Express response object
+ * @param {Map} sourceMap - Maps a string to the models for the news article sources
+ * @param {string} section - The name of the section from which articles will be retrieved
+ * @param {number} quantity - The number of articles to retrieve
  */
 async function getArticlesFromMultipleSources(res, sourceMap, section, quantity) {
   let responseArr = [];
@@ -34,7 +38,7 @@ async function getArticlesFromMultipleSources(res, sourceMap, section, quantity)
     res.status(400).json(error);
     return;
   } if (error != null) {
-    console.log(error);
+    console.error(error);
   }
   res.status(res.statusCode).json(responseArr.slice(
     0,
@@ -43,6 +47,11 @@ async function getArticlesFromMultipleSources(res, sourceMap, section, quantity)
 }
 
 export default class Articles {
+  /*
+  * @param {object} req - The Express request object
+  * @param {object} res - The Express response object
+  * @param {object} next - Express function to pass control to next middleware function
+  */
   static async getArticlesMetaData(req, res, next) {
     const sourceMap = new Map([
       ['guardian', model.guardian],
