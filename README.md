@@ -21,4 +21,5 @@ This app was created to provide one location to see articles from many different
 2. Run the command `echo "export GUARDIAN_API_KEY=<guardian-api-key>" > .env && echo "export NYT_API_KEY=<nyt-api-key>" >> .env` in the ui server directory
 3. Run `yarn dev` 
 #### Production (server)
-Run `pm2 start` to test the production build.
+1. Install [pm2](https://pm2.keymetrics.io/) (`yarn add pm2 -g`)
+2. Run `pm2 start` in the repository root to test the production build.
