@@ -16,7 +16,7 @@ This app was created to provide one location to see articles from many different
 2. Run the command `yarn init` in the project root
 ## Running locally
 #### Development
-1. Request API keys from the [New York Times](https://developer.nytimes.com/) and [The Guardian](https://open-platform.theguardian.com/)
+1. Request API keys from [The New York Times](https://developer.nytimes.com/) and [The Guardian](https://open-platform.theguardian.com/)
 2. Run the command `echo "export GUARDIAN_API_KEY=<guardian-api-key>" > .env && echo "export NYT_API_KEY=<nyt-api-key>" >> .env` in the ui server directory
 3. Run `yarn dev` 
 #### Production (server)
