@@ -4,6 +4,7 @@ This app provides a friendly UI and links to news articles from a few different 
 This app was created to provide one location to see articles from many different news sources in an attempt to gain exposure to multiple sides of issue.
 ## Technologies Used
 #### Built with
+- [Node.js](https://nodejs.org/)
 - [Vue.js](https://vuejs.org/)
 - [Express.js](https://expressjs.com/)
 #### Deployed with [AWS](https://aws.amazon.com/)
